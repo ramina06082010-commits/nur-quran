@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Сура — Нур</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #062d29, #17152f);
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.back {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #d4af37;
+    font-size: 34px;
+}
+
+.surah-info {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 25px;
+}
+
+.ayah {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+
+.arabic {
+    font-size: 28px;
+    text-align: right;
+    direction: rtl;
+    line-height: 2;
+    color: #ffffff;
+}
+
+.translation {
+    font-size: 17px;
+    color: #dddddd;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.number {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<a href="quran.html" class="back">← К списку сур</a>
+
+<div id="content"></div>
+
+<script>
+
+const id = new URLSearchParams(window.location.search).get("id");
+
+if (id === "1") {
+
+document.getElementById("content").innerHTML = `
+
+<h1>📖 Аль-Фатиха</h1>
+
+<div class="surah-info">
+Сура №1 · «Открывающая Книгу»
+</div>
+
+<div class="ayah">
+<div class="number">Аят 1</div>
+
+<div class="arabic">
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+</div>
+
+<div class="translation">
+Во имя Аллаха, Милостивого, Милующего!
+</div>
+</div>
+
+
+<div class="ayah">
+<div class="number">Аят 2</div>
+
+<div class="arabic">
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+</div>
+
+<div class="translation">
+Хвала Аллаху, Господу миров.
+</div>
+</div>
+
+
+<div class="ayah">
+<div class="number">Аят 3</div>
+
+<div class="arabic">
+الرَّحْمَٰنِ الرَّحِيمِ
+</div>
+
+<div class="translation">
+Милостивому, Милующему.
+</div>
+</div>
+
+
+<div class="ayah">
+<div class="number">Аят 4</div>
+
+<div class="arabic">
+مَالِكِ يَوْمِ الدِّينِ
+</div>
+
+<div class="translation">
+Властелину Дня воздаяния.
+</div>
+</div>
+
+
+<div class="ayah">
+<div class="number">Аят 5</div>
+
+<div class="arabic">
+إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+</div>
+
+<div class="translation">
+Тебе одному мы поклоняемся и Тебя одного просим о помощи.
+</div>
+</div>
+
+
+<div class="ayah">
+<div class="number">Аят 6</div>
+
+<div class="arabic">
+اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ
+</div>
+
+<div class="translation">
+Веди нас прямым путём.
+</div>
+</div>
+
+
+<div class="ayah">
+<div class="number">Аят 7</div>
+
+<div class="arabic">
+صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ
+غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ
+وَلَا الضَّالِّينَ
+</div>
+
+<div class="translation">
+Путём тех, кого Ты облагодетельствовал, не тех, на кого пал гнев, и не заблудших.
+</div>
+</div>
+
+`;
+
+} else {
+
+document.getElementById("content").innerHTML = `
+
+<h1>📖 Сура пока не добавлена</h1>
+
+<div class="ayah">
+<div class="translation">
+Эта сура скоро появится в приложении «Нур».
+</div>
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
