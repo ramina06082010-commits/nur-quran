@@ -38,7 +38,25 @@ h1 {
 .subtitle {
     text-align: center;
     color: #cccccc;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+}
+
+/* Поиск */
+
+.search {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #d4af37;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 17px;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+.search::placeholder {
+    color: #bbbbbb;
 }
 
 .surah-card {
@@ -95,51 +113,75 @@ h1 {
 
 <h1>📖 Коран</h1>
 
-<p class="subtitle">
-Выберите суру для чтения
-</p>
+<p class="subtitle">Выберите суру для чтения</p>
 
+<input
+    type="text"
+    id="search"
+    class="search"
+    placeholder="🔎 Найти суру..."
+    onkeyup="searchSurah()"
+>
+
+
+<div id="surahList">
 
 <a href="surah.html?id=1" class="surah-card">
-
     <div class="number">1</div>
-
     <div class="surah-info">
         <h2>Аль-Фатиха</h2>
         <p>Открывающая · 7 аятов</p>
     </div>
-
     <div class="arrow">←</div>
-
 </a>
 
-
 <a href="surah.html?id=2" class="surah-card">
-
     <div class="number">2</div>
-
     <div class="surah-info">
         <h2>Аль-Бакара</h2>
         <p>Корова · 286 аятов</p>
     </div>
-
     <div class="arrow">←</div>
-
 </a>
 
-
 <a href="surah.html?id=3" class="surah-card">
-
     <div class="number">3</div>
-
     <div class="surah-info">
         <h2>Али Имран</h2>
         <p>Семейство Имрана · 200 аятов</p>
     </div>
-
     <div class="arrow">←</div>
-
 </a>
+
+</div>
+
+
+<script>
+
+function searchSurah() {
+
+    let input = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let cards = document.querySelectorAll(".surah-card");
+
+    cards.forEach(function(card) {
+
+        let text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
 
 </body>
 </html>
