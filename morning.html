@@ -7,6 +7,10 @@
 <title>Утренние азкары — Нур</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,7 +18,6 @@ body {
     background: linear-gradient(135deg, #062d29, #17152f);
     min-height: 100vh;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .back {
@@ -43,6 +46,7 @@ h1 {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
+    border: 1px solid rgba(212,175,55,0.3);
 }
 
 .azkar h2 {
@@ -69,6 +73,9 @@ h1 {
     margin-top: 15px;
     font-weight: bold;
 }
+
+/* Счётчик */
+
 .counter {
     text-align: center;
     margin-top: 20px;
@@ -87,7 +94,9 @@ h1 {
     border-radius: 15px;
     font-size: 16px;
     cursor: pointer;
-}<style>
+}
+
+</style>
 </head>
 
 <body>
@@ -96,12 +105,14 @@ h1 {
 
 <h1>🌅 Утренние азкары</h1>
 
-<p class="subtitle">Начните свой день с поминания Аллаха 🤍</p>
+<p class="subtitle">
+Начните свой день с поминания Аллаха 🤍
+</p>
 
 
 <div class="azkar">
 
-<h2>1. Проснувшись</h2>
+<h2>1. После пробуждения</h2>
 
 <div class="arabic">
 الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ
@@ -135,17 +146,14 @@ h1 {
 
 <div class="arabic">
 اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ
-وَأُشْهِدُ حَمَلَةَ عَرْشِكَ
 </div>
 
 <div class="translation">
-О Аллах, поистине, этим утром я призываю Тебя в свидетели и призываю ангелов, несущих Твой Трон.
+О Аллах, поистине, этим утром я призываю Тебя в свидетели.
 </div>
 
 </div>
 
-
-<div class="azkar">
 
 <div class="azkar">
 
@@ -164,25 +172,13 @@ h1 {
 </div>
 
 <div class="counter">
-    <p id="count">0 / 100</p>
 
-    <button onclick="addCount()">🤍 Повторить</button>
+<p id="count">0 / 100</p>
 
-    <button onclick="resetCount()">↻ Сбросить</button>
-</div>
+<button onclick="addCount()">🤍 Повторить</button>
 
-</div>
+<button onclick="resetCount()">↻ Сбросить</button>
 
-<div class="arabic">
-سُبْحَانَ اللَّهِ وَبِحَمْدِهِ
-</div>
-
-<div class="translation">
-Пречист Аллах и хвала Ему.
-</div>
-
-<div class="repeat">
-Повторить: 100 раз
 </div>
 
 </div>
@@ -202,6 +198,7 @@ h1 {
 
 </div>
 
+
 <script>
 
 let count = 0;
@@ -218,5 +215,7 @@ function resetCount() {
     document.getElementById("count").innerText = "0 / 100";
 }
 
-</script></body>
+</script>
+
+</body>
 </html>
