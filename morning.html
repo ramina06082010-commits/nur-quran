@@ -69,7 +69,25 @@ h1 {
     margin-top: 15px;
     font-weight: bold;
 }
-</style>
+.counter {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.counter p {
+    font-size: 28px;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.counter button {
+    border: none;
+    padding: 14px 18px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}<style>
 </head>
 
 <body>
@@ -129,7 +147,31 @@ h1 {
 
 <div class="azkar">
 
+<div class="azkar">
+
 <h2>4. Поминание Аллаха</h2>
+
+<div class="arabic">
+سُبْحَانَ اللَّهِ وَبِحَمْدِهِ
+</div>
+
+<div class="translation">
+Пречист Аллах и хвала Ему.
+</div>
+
+<div class="repeat">
+Рекомендуемое количество: 100 раз
+</div>
+
+<div class="counter">
+    <p id="count">0 / 100</p>
+
+    <button onclick="addCount()">🤍 Повторить</button>
+
+    <button onclick="resetCount()">↻ Сбросить</button>
+</div>
+
+</div>
 
 <div class="arabic">
 سُبْحَانَ اللَّهِ وَبِحَمْدِهِ
@@ -160,5 +202,21 @@ h1 {
 
 </div>
 
-</body>
+<script>
+
+let count = 0;
+
+function addCount() {
+    if (count < 100) {
+        count++;
+        document.getElementById("count").innerText = count + " / 100";
+    }
+}
+
+function resetCount() {
+    count = 0;
+    document.getElementById("count").innerText = "0 / 100";
+}
+
+</script></body>
 </html>
