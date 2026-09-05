@@ -31,13 +31,31 @@ body {
 h1 {
     text-align: center;
     color: #d4af37;
-    font-size: 32px;
 }
 
 .info {
     text-align: center;
     color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.audio-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 20px;
+    border-radius: 20px;
     margin-bottom: 25px;
+    text-align: center;
+}
+
+.audio-box h2 {
+    color: #d4af37;
+    font-size: 20px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
 }
 
 .ayah {
@@ -86,11 +104,15 @@ h1 {
 
 <script>
 
-const id = new URLSearchParams(
-    window.location.search
-).get("id");
+const id = new URLSearchParams(window.location.search).get("id");
 
 const content = document.getElementById("content");
+
+const audioLinks = {
+    "1": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3",
+    "2": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/002.mp3",
+    "3": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/003.mp3"
+};
 
 async function loadSurah() {
 
@@ -120,10 +142,22 @@ async function loadSurah() {
             <h1>📖 ${arabic.englishName}</h1>
 
             <div class="info">
-                Сура №${arabic.number} ·
-                ${arabic.numberOfAyahs} аятов
+                Сура №${arabic.number} · ${arabic.numberOfAyahs} аятов
             </div>
         `;
+
+        if (audioLinks[id]) {
+            html += `
+                <div class="audio-box">
+                    <h2>🔊 Прослушать суру</h2>
+
+                    <audio controls>
+                        <source src="${audioLinks[id]}" type="audio/mpeg">
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                </div>
+            `;
+        }
 
         for (let i = 0; i < arabic.ayahs.length; i++) {
 
