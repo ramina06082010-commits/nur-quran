@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+< lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Время намаза — Нур</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #062d29, #17152f);
+}
+
+.back {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+h1 {
+    text-align: center;
+    color: #d4af37;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cccccc;
+}
+
+.city-select {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 15px;
+    border: 1px solid #d4af37;
+    background: #12332f;
+    color: white;
+    font-size: 17px;
+}
+
+.prayer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 18px;
+}
+
+.prayer-name {
+    font-size: 20px;
+}
+
+.prayer-time {
+    color: #d4af37;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.status {
+    text-align: center;
+    color: #cccccc;
+    margin: 20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back">← На главную</a>
+
+<h1>🕌 Время намаза</h1>
+
+<p class="subtitle">Выберите город</p><p id="todayDate" class="subtitle"></p><select id="schedule" class="city-select" onchange="loadPrayerTimes()">
+    <option value="api">Обычное расписание</option>
+    <option value="1muslim">Расписание 1Muslim — Грозный</option>
+</select>
+
+<select id="city" class="city-select" onchange="loadPrayerTimes()">
+    <option value="Grozny|Russia">Грозный</option>
+    <option value="Moscow|Russia">Москва</option>
+    <option value="Makkah|Saudi Arabia">Мекка</option>
+    <option value="Medina|Saudi Arabia">Медина</option>
+    <option value="Berlin|Germany">Берлин</option>
+</select>
+
+<p id="status" class="status">Загрузка времени намаза...</p>
+
+<div id="prayers">
+
+    <div class="prayer-card">
+        <div class="prayer-name">🌅 Фаджр</div>
+        <div class="prayer-time" id="fajr">--:--</div>
+    </div>
+
+    <div class="prayer-card">
+        <div class="prayer-name">☀️ Зухр</div>
+        <div class="prayer-time" id="dhuhr">--:--</div>
+    </div>
+
+    <div class="prayer-card">
+        <div class="prayer-name">🌤️ Аср</div>
+        <div class="prayer-time" id="asr">--:--</div>
+    </div>
+
+    <div class="prayer-card">
+        <div class="prayer-name">🌅 Магриб</div>
+        <div class="prayer-time" id="maghrib">--:--</div>
+    </div>
+
+    <div class="prayer-card">
+        <div class="prayer-name">🌙 Иша</div>
+        <div class="prayer-time" id="isha">--:--</div>
+    </div>
+
+</div>
+
+<script>
+
+function cleanTime(time) {
+    return time.replace(/\s*\(.+\)/, "");
+}
+
+function loadPrayerTimes() {
+
+    const selected = document.getElementById("city").value;const schedule = document.getElementById("schedule").value;
+
+if (schedule === "1muslim" && selected === "Grozny|Russia") {
+
+    document.getElementById("fajr").innerText = "04:07";
+    document.getElementById("dhuhr").innerText = "12:30";
+    document.getElementById("asr").innerText = "15:42";
+    document.getElementById("maghrib").innerText = "18:30";
+    document.getElementById("isha").innerText = "19:59";
+
+    document.getElementById("status").innerText =
+        "Расписание 1Muslim для Грозного";
+
+    return;
+  }
+    const parts = selected.split("|");
+
+    const city = parts[0];
+    const country = parts[1];
+
+    document.getElementById("status").innerText =
+        "Загрузка...";
+
+    const url =
+        "https://api.aladhan.com/v1/timingsByCity?city=" +
+        encodeURIComponent(city) +
+        "&country=" +
+        encodeURIComponent(country) +
+"&method=14";
+
+    fetch(url)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(result) {
+
+            const times = result.data.timings;
+
+            document.getElementById("fajr").innerText =
+                cleanTime(times.Fajr);
+
+            document.getElementById("dhuhr").innerText =
+                cleanTime(times.Dhuhr);
+
+            document.getElementById("asr").innerText =
+                cleanTime(times.Asr);
+
+            document.getElementById("maghrib").innerText =
+                cleanTime(times.Maghrib);
+
+            document.getElementById("isha").innerText =
+                cleanTime(times.Isha);
+
+            document.getElementById("status").innerText =
+                "Расписание на сегодня для города: " + city;
+        })
+        .catch(function() {
+
+            document.getElementById("status").innerText =
+                "Не удалось загрузить время. Проверьте интернет.";
+        });
+}
+
+loadPrayerTimes();
+
+</script>
+const today = new Date();
+
+document.getElementById("todayDate").innerText =
+    "📅 " + today.toLocaleDateString("ru-RU", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+</body>
+</html>
