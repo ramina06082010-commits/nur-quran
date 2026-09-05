@@ -3,14 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Коран — Нур</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -25,8 +21,6 @@ body {
     color: #d4af37;
     text-decoration: none;
     font-size: 20px;
-    display: inline-block;
-    margin-bottom: 25px;
 }
 
 h1 {
@@ -86,7 +80,6 @@ h1 {
 .surah-info h2 {
     margin: 0 0 5px;
     color: #d4af37;
-    font-size: 20px;
 }
 
 .surah-info p {
@@ -99,24 +92,6 @@ h1 {
     border: none;
     color: #d4af37;
     font-size: 30px;
-    cursor: pointer;
-}
-
-.favorite-title {
-    color: #d4af37;
-    margin-top: 30px;
-}
-
-.favorite-card {
-    background: rgba(255,255,255,0.08);
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 15px;
-}
-
-.favorite-card a {
-    color: white;
-    text-decoration: none;
 }
 
 </style>
@@ -127,7 +102,6 @@ h1 {
 <a href="index.html" class="back">← На главную</a>
 
 <h1>📖 Коран</h1>
-
 <p class="subtitle">Выберите суру для чтения</p>
 
 <input
@@ -138,11 +112,7 @@ h1 {
     oninput="searchSurah()"
 >
 
-<div id="favorites"></div>
-
-<div id="surahList">
-
-<div class="surah-card" data-id="1">
+<div id="surahList"><div class="surah-card">
     <a href="surah.html?id=1" class="surah-link">
         <div class="number">1</div>
         <div class="surah-info">
@@ -150,10 +120,10 @@ h1 {
             <p>Открывающая · 7 аятов</p>
         </div>
     </a>
-    <button class="star" onclick="toggleFavorite('1', 'Аль-Фатиха')">☆</button>
+    <button class="star" onclick="toggleFavorite('1','Аль-Фатиха')">☆</button>
 </div>
 
-<div class="surah-card" data-id="2">
+<div class="surah-card">
     <a href="surah.html?id=2" class="surah-link">
         <div class="number">2</div>
         <div class="surah-info">
@@ -161,12 +131,117 @@ h1 {
             <p>Корова · 286 аятов</p>
         </div>
     </a>
-    <button class="star" onclick="toggleFavorite('2', 'Аль-Бакара')">☆</button>
+    <button class="star" onclick="toggleFavorite('2','Аль-Бакара')">☆</button>
 </div>
 
-<div class="surah-card" data-id="3">
+<div class="surah-card">
     <a href="surah.html?id=3" class="surah-link">
         <div class="number">3</div>
         <div class="surah-info">
             <h2>Али Имран</h2>
-           
+            <p>Семейство Имрана · 200 аятов</p>
+        </div>
+    </a>
+    <button class="star" onclick="toggleFavorite('3','Али Имран')">☆</button>
+</div>
+
+<div class="surah-card">
+    <a href="surah.html?id=4" class="surah-link">
+        <div class="number">4</div>
+        <div class="surah-info">
+            <h2>Ан-Ниса</h2>
+            <p>Женщины · 176 аятов</p>
+        </div>
+    </a>
+    <button class="star" onclick="toggleFavorite('4','Ан-Ниса')">☆</button>
+</div>
+
+<div class="surah-card">
+    <a href="surah.html?id=5" class="surah-link">
+        <div class="number">5</div>
+        <div class="surah-info">
+            <h2>Аль-Маида</h2>
+            <p>Трапеза · 120 аятов</p>
+        </div>
+    </a>
+    <button class="star" onclick="toggleFavorite('5','Аль-Маида')">☆</button>
+</div>
+
+<div class="surah-card">
+    <a href="surah.html?id=6" class="surah-link">
+        <div class="number">6</div>
+        <div class="surah-info">
+            <h2>Аль-Ан'ам</h2>
+            <p>Скот · 165 аятов</p>
+        </div>
+    </a>
+    <button class="star" onclick="toggleFavorite('6','Аль-Ан'ам')">☆</button>
+</div>
+
+</div><script>
+
+function getFavorites() {
+    return JSON.parse(localStorage.getItem("favorites")) || [];
+}
+
+function toggleFavorite(id, name) {
+    let favorites = getFavorites();
+
+    let exists = favorites.some(function(item) {
+        return item.id === id;
+    });
+
+    if (exists) {
+        favorites = favorites.filter(function(item) {
+            return item.id !== id;
+        });
+    } else {
+        favorites.push({
+            id: id,
+            name: name
+        });
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    updateStars();
+}
+
+function updateStars() {
+    let favorites = getFavorites();
+
+    document.querySelectorAll(".star").forEach(function(star) {
+        let onclickText = star.getAttribute("onclick");
+
+        let id = onclickText.match(/'(\d+)'/)[1];
+
+        let exists = favorites.some(function(item) {
+            return item.id === id;
+        });
+
+        star.innerText = exists ? "★" : "☆";
+    });
+}
+
+function searchSurah() {
+    let input = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    document.querySelectorAll(".surah-card").forEach(function(card) {
+        let text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+updateStars();
+
+</script>
+
+</body>
+</html>
