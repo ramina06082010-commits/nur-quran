@@ -3,261 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Вечерние азкары — Нур</title>
-
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+    margin:0;
+    padding:20px 14px 40px;
+    font-family:Arial,sans-serif;
+    color:#fff;
+    background:linear-gradient(135deg,#062d29,#17152f);
 }
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    background: linear-gradient(135deg, #062d29, #17152f);
-    min-height: 100vh;
-    padding: 20px;
+.container{max-width:800px;margin:auto}
+.back{
+    color:#d4af37;
+    text-decoration:none;
+    font-size:16px;
 }
-
-.back {
-    color: #d4af37;
-    text-decoration: none;
-    font-size: 20px;
-    display: inline-block;
-    margin-bottom: 25px;
+h1{
+    text-align:center;
+    color:#d4af37;
+    margin:22px 0 8px;
 }
-
-h1 {
-    text-align: center;
-    color: #d4af37;
-    font-size: 32px;
+.subtitle{
+    text-align:center;
+    opacity:.8;
+    margin-bottom:25px;
 }
-
-.subtitle {
-    text-align: center;
-    color: #cccccc;
-    font-size: 18px;
-    margin-bottom: 30px;
+.azkar,.surah{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(212,175,55,.25);
+    border-radius:20px;
+    padding:18px;
+    margin:16px 0;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
-
-.azkar {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(212,175,55,0.3);
+.azkar h2,.surah h2{
+    color:#d4af37;
+    margin-top:0;
 }
-
-.azkar h2 {
-    color: #d4af37;
-    font-size: 21px;
+.arabic{
+    direction:rtl;
+    text-align:right;
+    font-size:24px;
+    line-height:1.9;
+    margin:15px 0;
 }
-
-.arabic {
-    font-size: 25px;
-    text-align: right;
-    direction: rtl;
-    line-height: 2;
-    margin: 20px 0;
+.translation,.translit,.source{
+    line-height:1.6;
+    margin:10px 0;
 }
-
-.translation {
-    color: #dddddd;
-    font-size: 17px;
-    line-height: 1.6;
+.translit{opacity:.9}
+.source{font-size:14px;opacity:.7}
+.repeat{
+    display:inline-block;
+    color:#d4af37;
+    font-weight:bold;
+    margin:8px 0 12px;
 }
-
-.repeat {
-    color: #d4af37;
-    margin-top: 15px;
-    font-weight: bold;
+.counter{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin-top:15px;
 }
-
-.counter {
-    text-align: center;
-    margin-top: 20px;
+.counter button{
+    border:1px solid #d4af37;
+    background:#d4af37;
+    color:#17152f;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:12px;
+    padding:10px 18px;
 }
-
-.counter p {
-    font-size: 28px;
-    color: #d4af37;
-    font-weight: bold;
+.count{
+    min-width:80px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
 }
-
-.counter button {
-    border: none;
-    padding: 14px 18px;
-    margin: 5px;
-    border-radius: 15px;
-    font-size: 16px;
-    cursor: pointer;
+.done{
+    text-align:center;
+    color:#d4af37;
+    font-weight:bold;
+    margin-top:8px;
+    display:none;
 }
-
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<a href="index.html" class="back">← На главную</a>
+<a class="back" href="index.html">← На главную</a>
 
 <h1>🌙 Вечерние азкары</h1>
-
-<p class="subtitle">
-Завершите свой день с поминанием Аллаха 🤍
-</p>
-
+<div class="subtitle">Азкары на вечер</div>
 
 <div class="azkar">
-
-<h2>1. Вечернее поминание</h2>
-
-<div class="arabic">
-اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ
+<h2>1. Защита от зла созданий</h2>
+<div class="arabic">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ</div>
+<div class="translation">Прибегаю к совершенным словам Аллаха от зла того, что Он создал.</div>
+<div class="translit">А'узу би-калиматилляхи-ттаммати мин шарри ма халяк.</div>
 </div>
-
-<div class="translation">
-О Аллах, благодаря Тебе мы дожили до вечера и благодаря Тебе мы доживём до утра. Благодаря Тебе мы живём и умираем, и к Тебе возвращение.
-</div>
-
-</div>
-
 
 <div class="azkar">
-
-<h2>2. Защита от зла</h2>
-
-<div class="arabic">
-أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ
+<h2>2. Саййид аль-истигфар</h2>
+<div class="arabic">اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ</div>
+<div class="translation">О Аллах, Ты мой Господь, нет божества, кроме Тебя. Ты создал меня, и я Твой раб. Я придерживаюсь Твоего завета и обещания насколько могу. Прибегаю к Тебе от зла того, что совершил. Признаю Твои милости по отношению ко мне и признаю свой грех. Прости меня, ведь никто не прощает грехи, кроме Тебя.</div>
 </div>
 
-<div class="translation">
-Прибегаю к совершенным словам Аллаха от зла того, что Он сотворил.
-</div>
-
-<div class="repeat">
-Рекомендуемое количество: 3 раза
-</div>
-
+<div class="azkar">
+<h2>3. Единобожие</h2>
+<div class="arabic">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</div>
+<div class="translation">Нет божества, кроме одного Аллаха, у Которого нет сотоварища. Ему принадлежит власть и хвала, и Он способен на всякую вещь.</div>
+<div class="repeat">Нужно прочитать 10 раз</div>
 <div class="counter">
-<p id="count1">0 / 3</p>
-<button onclick="addCount1()">🤍 Повторить</button>
-<button onclick="resetCount1()">↻ Сбросить</button>
+<button onclick="countUp(3,10)">+</button>
+<div class="count" id="count3">0 / 10</div>
+<button onclick="resetCount(3)">↻</button>
 </div>
-
+<div class="done" id="done3">✓ Готово</div>
 </div>
-
 
 <div class="azkar">
-
-<h2>3. Поминание Аллаха</h2>
-
-<div class="arabic">
-سُبْحَانَ اللَّهِ وَبِحَمْدِهِ
-</div>
-
-<div class="translation">
-Пречист Аллах и хвала Ему.
-</div>
-
-<div class="repeat">
-Рекомендуемое количество: 100 раз
-</div>
-
+<h2>4. Субханаллахи ва бихамдихи</h2>
+<div class="arabic">سُبْحَانَ اللَّهِ وَ بِحَمْدِهِ</div>
+<div class="translation">Пречист Аллах и хвала Ему.</div>
+<div class="repeat">Нужно прочитать 100 раз</div>
 <div class="counter">
-<p id="count2">0 / 100</p>
-<button onclick="addCount2()">🤍 Повторить</button>
-<button onclick="resetCount2()">↻ Сбросить</button>
+<button onclick="countUp(4,100)">+</button>
+<div class="count" id="count4">0 / 100</div>
+<button onclick="resetCount(4)">↻</button>
 </div>
-
+<div class="done" id="done4">✓ Готово</div>
 </div>
-
 
 <div class="azkar">
-
-<h2>4. Свидетельство единобожия</h2>
-
-<div class="arabic">
-لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ
+<h2>5. Вечером мы вступили во власть Аллаха</h2>
+<div class="arabic">أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا</div>
+<div class="translation">Мы встретили вечер, и власть принадлежит Аллаху. Хвала Аллаху. Нет божества, кроме одного Аллаха, у Которого нет сотоварища. Ему принадлежит власть и хвала, и Он способен на всякую вещь. Господь мой, прошу Тебя о благе этой ночи и благе того, что после неё, и прибегаю к Тебе от зла этой ночи и зла того, что после неё.</div>
 </div>
-
-<div class="translation">
-Нет божества, достойного поклонения, кроме одного Аллаха. Нет у Него сотоварища. Ему принадлежит власть и хвала, и Он способен на всякую вещь.
-</div>
-
-</div>
-
 
 <div class="azkar">
-
-<h2>5. Просьба о защите</h2>
-
-<div class="arabic">
-بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ
+<h2>6. Вечерняя мольба</h2>
+<div class="arabic">اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ</div>
+<div class="translation">О Аллах, благодаря Тебе мы встретили вечер, благодаря Тебе встречаем утро, благодаря Тебе живём и благодаря Тебе умираем, и к Тебе возвращение.</div>
 </div>
 
-<div class="translation">
-С именем Аллаха, с именем Которого ничто не может причинить вреда ни на земле, ни на небе. Он — Слышащий, Знающий.
+<div class="azkar">
+<h2>7. Просьба о благополучии</h2>
+<div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي</div>
+<div class="translation">О Аллах, я прошу Тебя о прощении и благополучии в этом мире и в Последней жизни. О Аллах, я прошу Тебя о прощении и благополучии в моей религии, моей жизни, моей семье и моём имуществе.</div>
 </div>
 
-<div class="repeat">
-Рекомендуемое количество: 3 раза
+<div class="azkar">
+<h2>8. Просьба о защите</h2>
+<div class="arabic">اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ</div>
+<div class="translation">О Аллах, Знающий сокровенное и явное, Творец небес и земли, Господь и Владыка всякой вещи! Свидетельствую, что нет божества, кроме Тебя. Прибегаю к Тебе от зла моей души, от зла шайтана и его многобожия.</div>
 </div>
 
+<div class="azkar">
+<h2>9. Довольство Аллахом</h2>
+<div class="arabic">رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا</div>
+<div class="translation">Я доволен Аллахом как Господом, исламом как религией и Мухаммадом ﷺ как пророком.</div>
+<div class="repeat">Нужно прочитать 3 раза</div>
 <div class="counter">
-<p id="count3">0 / 3</p>
-<button onclick="addCount3()">🤍 Повторить</button>
-<button onclick="resetCount3()">↻ Сбросить</button>
+<button onclick="countUp(9,3)">+</button>
+<div class="count" id="count9">0 / 3</div>
+<button onclick="resetCount(9)">↻</button>
 </div>
-
+<div class="done" id="done9">✓ Готово</div>
 </div>
-
 
 <div class="azkar">
-
-<h2>6. Мольба о помощи</h2>
-
-<div class="arabic">
-يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ
+<h2>10. Аль-Хайюль-Кайюм</h2>
+<div class="arabic">يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
+<div class="translation">О Живой, О Вседержитель! Твоей милостью я взываю о помощи. Исправь все мои дела и не оставляй меня с самим собой даже на мгновение.</div>
 </div>
 
-<div class="translation">
-О Живой, о Вседержитель! По милости Твоей прошу помощи. Исправь для меня все мои дела и не предоставляй меня самому себе даже на мгновение.
+<div class="azkar">
+<h2>11. Хасбийаллах</h2>
+<div class="arabic">حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</div>
+<div class="translation">Мне достаточно Аллаха, нет божества, кроме Него. На Него я уповаю, и Он — Господь Великого Трона.</div>
+<div class="repeat">Нужно прочитать 7 раз</div>
+<div class="counter">
+<button onclick="countUp(11,7)">+</button>
+<div class="count" id="count11">0 / 7</div>
+<button onclick="resetCount(11)">↻</button>
+</div>
+<div class="done" id="done11">✓ Готово</div>
+</div>
+
+<div class="azkar">
+<h2>12. Защита именем Аллаха</h2>
+<div class="arabic">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ</div>
+<div class="translation">С именем Аллаха, с именем Которого ничто не причинит вреда ни на земле, ни на небе. Он — Слышащий, Знающий.</div>
+<div class="repeat">Нужно прочитать 3 раза</div>
+<div class="counter">
+<button onclick="countUp(12,3)">+</button>
+<div class="count" id="count12">0 / 3</div>
+<button onclick="resetCount(12)">↻</button>
+</div>
+<div class="done" id="done12">✓ Готово</div>
+</div>
+
+<div class="surah">
+<h2>📖 Сура Аль-Ихляс</h2>
+<div class="arabic">قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ</div>
+<div class="translation">Скажи: «Он — Аллах Единый. Аллах Самодостаточный. Он не родил и не был рождён, и нет никого равного Ему».</div>
+</div>
+
+<div class="surah">
+<h2>📖 Сура Аль-Фаляк</h2>
+<div class="arabic">قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ</div>
+<div class="translation">Скажи: «Прибегаю к Господу рассвета от зла того, что Он создал, от зла мрака, когда он наступает, от зла тех, кто дует на узлы, и от зла завистника, когда он завидует».</div>
+</div>
+
+<div class="surah">
+<h2>📖 Сура Ан-Нас</h2>
+<div class="arabic">قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ</div>
+<div class="translation">Скажи: «Прибегаю к Господу людей, Царю людей, Богу людей, от зла наущателя, который исчезает, когда поминают Аллаха, который наущает сердца людей, будь он из джиннов или людей».</div>
+</div>
+
+<div class="surah">
+<h2>📖 Последние два аята суры Аль-Бакара</h2>
+<div class="arabic">آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ</div>
+<div class="arabic">لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ</div>
+<div class="translation">Аяты 285–286 суры Аль-Бакара.</div>
 </div>
 
 </div>
-
 
 <script>
+const counts = {};
 
-let count1 = 0;
-let count2 = 0;
-let count3 = 0;
-
-function addCount1() {
-    if (count1 < 3) {
-        count1++;
-        document.getElementById("count1").innerText = count1 + " / 3";
+function countUp(id, max){
+    if(!counts[id]) counts[id]=0;
+    if(counts[id] < max){
+        counts[id]++;
+        document.getElementById("count"+id).textContent = counts[id] + " / " + max;
+    }
+    if(counts[id] === max){
+        document.getElementById("done"+id).style.display = "block";
     }
 }
 
-function resetCount1() {
-    count1 = 0;
-    document.getElementById("count1").innerText = "0 / 3";
+function resetCount(id){
+    counts[id]=0;
+    const el=document.getElementById("count"+id);
+    const max=el.textContent.split("/")[1].trim();
+    el.textContent="0 / "+max;
+    document.getElementById("done"+id).style.display="none";
 }
+</script>
 
-
-function addCount2() {
-    if (count2 < 100) {
-        count2++;
-        document.getElementById("count2").innerText = count2 + " / 100";
-    }
-}
-
-function resetCount2() {
-    count2 = 0;
-    document.getElementById("count2").innerText = "0 / 100";
-}
-
-
-function addCount
+</body>
+</html>
