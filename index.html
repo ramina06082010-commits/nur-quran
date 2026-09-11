@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ru">
-<link rel="manifest" href="manifest.json"><head><meta name="google-site-verification" content="i73ipdOI26E5x80zxr85dLhXncGVRGRwd2IzQw-t0lA" />
+<head>
+  <meta name="google-site-verification" content="i73ipdOI26E5x80zxr85dLhXncGVRGRwd2IzQw-t0lA" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
 
   <title>Нур — Коран и Азкары</title>
 
@@ -79,6 +80,47 @@
       margin: 10px 0 5px;
     }
 
+    .support {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 22px;
+      margin: 25px 0 15px;
+      border-radius: 20px;
+      background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.25),
+        rgba(90, 50, 130, 0.35)
+      );
+      border: 1px solid #d4af37;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      transition: 0.3s;
+    }
+
+    .support:hover {
+      transform: scale(1.03);
+      background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.35),
+        rgba(90, 50, 130, 0.45)
+      );
+    }
+
+    .support-icon {
+      font-size: 38px;
+    }
+
+    .support h2 {
+      margin: 10px 0 5px;
+      color: #d4af37;
+    }
+
+    .support p {
+      margin: 5px 0 0;
+      color: #e8e2f0;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -106,34 +148,52 @@
       <div class="icon">📖</div>
       <h2>Священный Коран</h2>
       <p>Читайте суры и их перевод.</p>
-    </>
+    </a>
 
     <a href="morning.html" class="card">
       <div class="icon">🌅</div>
       <h2>Утренние азкары</h2>
       <p>Начните свой день с поминания Аллаха.</p>
-    </>
+    </a>
 
     <a href="evening.html" class="card">
-      
       <div class="icon">🌙</div>
       <h2>Вечерние азкары</h2>
       <p>Завершите день с поминанием Аллаха.</p>
-    </>
+    </a>
 
-  <a href="namaz.html" class="card">
-    <div class="icon">🕌</div>
-    <h2>Время намаза</h2>
-    <p>Узнайте расписание намазов.</p>
-  </a></main>
+    <a href="namaz.html" class="card">
+      <div class="icon">🕌</div>
+      <h2>Время намаза</h2>
+      <p>Узнайте расписание намазов.</p>
+    </a>
+
+    <a href="#" class="support" onclick="showSupport(event)">
+      <div class="support-icon">🤍</div>
+      <h2>Поддержать «Нур»</h2>
+      <p>Помочь развитию проекта</p>
+    </a>
+
+  </main>
 
   <footer>
     ✨ Нур — Коран и Азкары
   </footer>
 
-<script>
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-}
-</script></body>
+  <script>
+    function showSupport(event) {
+      event.preventDefault();
+
+      alert(
+        "🤍 Спасибо за желание поддержать проект «Нур»!\n\n" +
+        "Способ поддержки скоро будет добавлен."
+      );
+    }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+
+</body>
 </html>
