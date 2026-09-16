@@ -1,199 +1,644 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta name="google-site-verification" content="i73ipdOI26E5x80zxr85dLhXncGVRGRwd2IzQw-t0lA" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Нур — Коран и Азкары</title>
+<title>Нур — Коран и знания</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f3ea;
+    color: #20251f;
+    transition: .3s;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,243,234,.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #ddd4c2;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #496b52;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #496b52;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+    min-height: 600px;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.arabic {
+    font-size: 48px;
+    color: #496b52;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: clamp(50px, 10vw, 90px);
+    color: #2f4935;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #6d716b;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 30px;
+    background: #496b52;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: #38563f;
+}
+
+/* SECTIONS */
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+    color: #304735;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 35px;
+}
+
+/* SEARCH */
+
+.search-box {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 16px 20px;
+    border-radius: 30px;
+    border: 1px solid #d8cfbe;
+    background: white;
+    outline: none;
+    font-size: 15px;
+}
+
+/* SURAS */
+
+.suras {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.sura {
+    background: white;
+    border: 1px solid #e2dacb;
+    border-radius: 20px;
+    padding: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.sura:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(50,60,40,.1);
+}
+
+.sura-number {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #e7efe8;
+    color: #496b52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.sura h3 {
+    margin-bottom: 7px;
+}
+
+.sura p {
+    color: #888;
+    font-size: 13px;
+}
+
+/* AYAT */
+
+.ayat {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    border: 1px solid #e2dacb;
+    text-align: center;
+}
+
+.ayat-arabic {
+    font-size: 30px;
+    line-height: 2;
+    color: #304735;
+    margin-bottom: 20px;
+}
+
+.ayat-translation {
+    color: #777;
+    line-height: 1.7;
+}
+
+/* DUA */
+
+.dua-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.dua {
+    background: #eef3ed;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.dua h3 {
+    color: #38563f;
+    margin-bottom: 12px;
+}
+
+.dua p {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* FAVORITES */
+
+.favorite {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 25px;
+    border: 1px solid #e2dacb;
+}
+
+.star {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 50px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #304735;
+    color: #e5ebe5;
+}
+
+footer p {
+    margin-top: 8px;
+    color: #b9c6ba;
+}
+
+/* DARK MODE */
+
+.dark {
+    background: #111712;
+    color: #e7ebe7;
+}
+
+.dark header {
+    background: rgba(17,23,18,.9);
+    border-color: #29332b;
+}
+
+.dark nav a {
+    color: #ddd;
+}
+
+.dark h1,
+.dark .title {
+    color: #dbe8dc;
+}
+
+.dark .hero p,
+.dark .subtitle {
+    color: #aeb7af;
+}
+
+.dark .sura,
+.dark .ayat,
+.dark .favorite {
+    background: #192119;
+    border-color: #303b32;
+}
+
+.dark .sura p,
+.dark .ayat-translation {
+    color: #aeb7af;
+}
+
+.dark .dua {
+    background: #1d291f;
+}
+
+.dark .search-box input {
+    background: #192119;
+    color: white;
+    border-color: #303b32;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav div:last-child {
+        display: none;
     }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(
-        135deg,
-        #062d24,
-        #1b103d
-      );
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
+    .hero {
+        min-height: 520px;
+        padding: 70px 20px;
     }
 
     .arabic {
-      font-size: 70px;
-      color: #d4af37;
-      margin: 0;
+        font-size: 35px;
     }
 
-    h1 {
-      font-size: 36px;
-      margin: 10px 0;
+    .suras,
+    .dua-grid {
+        grid-template-columns: 1fr;
     }
 
-    .welcome {
-      max-width: 600px;
-      margin: auto;
-      padding: 15px;
-      line-height: 1.6;
-      color: #e8e2f0;
+    .search-box {
+        flex-direction: column;
     }
 
-    .menu {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
+    .search-box .button {
+        width: 100%;
     }
 
-    .card {
-      display: block;
-      text-decoration: none;
-      color: white;
-      padding: 25px;
-      margin: 15px 0;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      transition: 0.3s;
+    .ayat {
+        padding: 25px 18px;
     }
 
-    .card:hover {
-      transform: scale(1.03);
-      background: rgba(255, 255, 255, 0.18);
+    .ayat-arabic {
+        font-size: 24px;
     }
-
-    .icon {
-      font-size: 35px;
-    }
-
-    .card h2 {
-      margin: 10px 0 5px;
-    }
-
-    .support {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      padding: 22px;
-      margin: 25px 0 15px;
-      border-radius: 20px;
-      background: linear-gradient(
-        135deg,
-        rgba(212, 175, 55, 0.25),
-        rgba(90, 50, 130, 0.35)
-      );
-      border: 1px solid #d4af37;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-      transition: 0.3s;
-    }
-
-    .support:hover {
-      transform: scale(1.03);
-      background: linear-gradient(
-        135deg,
-        rgba(212, 175, 55, 0.35),
-        rgba(90, 50, 130, 0.45)
-      );
-    }
-
-    .support-icon {
-      font-size: 38px;
-    }
-
-    .support h2 {
-      margin: 10px 0 5px;
-      color: #d4af37;
-    }
-
-    .support p {
-      margin: 5px 0 0;
-      color: #e8e2f0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #c7b9d8;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <p class="arabic">نور</p>
-    <h1>Нур</h1>
+<header>
+    <div class="nav">
 
-    <p class="welcome">
-      Добро пожаловать в «Нур» 🤍<br>
-      Пусть этот уголок поможет находить время для чтения
-      Корана и поминания Аллаха каждый день.
+        <div class="logo">☾ НУР</div>
+
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#suras">Суры</a>
+            <a href="#dua">Дуа</a>
+        </nav>
+
+        <button class="button" onclick="toggleDark()">
+            ◐
+        </button>
+
+    </div>
+</header>
+
+
+<!-- ГЛАВНАЯ -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="arabic">
+            وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا
+        </div>
+
+        <h1>НУР</h1>
+
+        <p>
+            Место для чтения Корана, изучения аятов,
+            дуа и полезных исламских знаний.
+        </p>
+
+        <a href="#suras" class="button">
+            Читать Коран
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ПОИСК -->
+
+<section>
+
+    <h2 class="title">Поиск 🔎</h2>
+
+    <p class="subtitle">
+        Найди суру по названию или номеру
     </p>
-  </header>
 
-  <main class="menu">
+    <div class="search-box">
 
-    <a href="quran.html" class="card">
-      <div class="icon">📖</div>
-      <h2>Священный Коран</h2>
-      <p>Читайте суры и их перевод.</p>
-    </a>
+        <input
+            id="search"
+            type="text"
+            placeholder="Например: Аль-Фатиха или 1"
+            oninput="searchSuras()"
+        >
 
-    <a href="morning.html" class="card">
-      <div class="icon">🌅</div>
-      <h2>Утренние азкары</h2>
-      <p>Начните свой день с поминания Аллаха.</p>
-    </a>
+        <button class="button" onclick="searchSuras()">
+            Найти
+        </button>
 
-    <a href="evening.html" class="card">
-      <div class="icon">🌙</div>
-      <h2>Вечерние азкары</h2>
-      <p>Завершите день с поминанием Аллаха.</p>
-    </a>
+    </div>
 
-    <a href="namaz.html" class="card">
-      <div class="icon">🕌</div>
-      <h2>Время намаза</h2>
-      <p>Узнайте расписание намазов.</p>
-    </a>
+</section>
 
-    <a href="#" class="support" onclick="showSupport(event)">
-      <div class="support-icon">🤍</div>
-      <h2>Поддержать «Нур»</h2>
-      <p>Помочь развитию проекта</p>
-    </a>
 
-  </main>
+<!-- СУРЫ -->
 
-  <footer>
-    ✨ Нур — Коран и Азкары
-  </footer>
+<section id="suras">
 
-  <script>
-    function showSupport(event) {
-      event.preventDefault();
+    <h2 class="title">Суры Корана 📖</h2>
 
-      alert(
-        "🤍 Спасибо за желание поддержать проект «Нур»!\n\n" +
-        "Способ поддержки скоро будет добавлен."
-      );
-    }
+    <p class="subtitle">
+        Выбери суру для чтения
+    </p>
 
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
-    }
-  </script>
+    <div class="suras" id="suraList">
+
+        <div class="sura">
+            <div class="sura-number">1</div>
+            <h3>Аль-Фатиха</h3>
+            <p>Открывающая · 7 аятов</p>
+        </div>
+
+        <div class="sura">
+            <div class="sura-number">2</div>
+            <h3>Аль-Бакара</h3>
+            <p>Корова · 286 аятов</p>
+        </div>
+
+        <div class="sura">
+            <div class="sura-number">3</div>
+            <h3>Али Имран</h3>
+            <p>Семейство Имрана · 200 аятов</p>
+        </div>
+
+        <div class="sura">
+            <div class="sura-number">4</div>
+            <h3>Ан-Ниса</h3>
+            <p>Женщины · 176 аятов</p>
+        </div>
+
+        <div class="sura">
+            <div class="sura-number">5</div>
+            <h3>Аль-Маида</h3>
+            <p>Трапеза · 120 аятов</p>
+        </div>
+
+        <div class="sura">
+            <div class="sura-number">6</div>
+            <h3>Аль-Анам</h3>
+            <p>Скот · 165 аятов</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- АЯТ ДНЯ -->
+
+<section>
+
+    <h2 class="title">Аят дня ✨</h2>
+
+    <p class="subtitle">
+        Небольшое напоминание
+    </p>
+
+    <div class="ayat">
+
+        <div class="ayat-arabic">
+            إِنَّ مَعَ الْعُسْرِ يُسْرًا
+        </div>
+
+        <div class="ayat-translation">
+            «Воистину, за трудностью наступает облегчение».
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ДУА -->
+
+<section id="dua">
+
+    <h2 class="title">Дуа 🤲</h2>
+
+    <p class="subtitle">
+        Подборка коротких дуа
+    </p>
+
+    <div class="dua-grid">
+
+        <div class="dua">
+            <h3>О знании</h3>
+            <p>
+                رَبِّ زِدْنِي عِلْمًا
+                <br><br>
+                «Господи, увеличь мои знания».
+            </p>
+        </div>
+
+        <div class="dua">
+            <h3>О благе</h3>
+            <p>
+                رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً
+                <br><br>
+                «Господь наш, даруй нам благо в этом мире».
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ИЗБРАННОЕ -->
+
+<section>
+
+    <h2 class="title">Избранное ⭐</h2>
+
+    <div class="favorite">
+
+        <div class="star">⭐</div>
+
+        <h3>Сохраняй любимые аяты</h3>
+
+        <p style="margin-top:10px;color:#777;">
+            Здесь в будущем можно сделать
+            настоящую систему избранных аятов.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <strong>☾ НУР</strong>
+
+    <p>
+        Коран · Дуа · Знания
+    </p>
+
+    <p>
+        © 2026 НУР
+    </p>
+
+</footer>
+
+
+<script>
+
+/* ТЁМНАЯ ТЕМА */
+
+function toggleDark() {
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark")
+    );
+}
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+}
+
+
+/* ПОИСК СУР */
+
+function searchSuras() {
+
+    const query =
+        document.getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const suras =
+        document.querySelectorAll(".sura");
+
+    suras.forEach(sura => {
+
+        const text =
+            sura.textContent.toLowerCase();
+
+        if (text.includes(query)) {
+            sura.style.display = "";
+        } else {
+            sura.style.display = "none";
+        }
+
+    });
+}
+
+</script>
 
 </body>
 </html>
