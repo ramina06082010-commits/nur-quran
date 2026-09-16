@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Азкары — Нур</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(circle at top, #174f45 0%, transparent 35%),
+                linear-gradient(145deg, #041f1c, #0b302b 45%, #17132d);
+
+            padding: 25px 18px 35px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .back {
+            display: inline-block;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0 30px;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 34px;
+            color: #d4af37;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            color: #c9d8d5;
+            font-size: 15px;
+        }
+
+        .cards {
+            display: grid;
+            gap: 16px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+
+            padding: 24px;
+            min-height: 130px;
+
+            border-radius: 24px;
+
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(212,175,55,0.28);
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+            transition: 0.2s;
+        }
+
+        .card:active {
+            transform: scale(0.97);
+        }
+
+        .card-icon {
+            font-size: 42px;
+            width: 65px;
+            min-width: 65px;
+        }
+
+        .text {
+            flex: 1;
+        }
+
+        .title {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #b9c9c6;
+            line-height: 1.4;
+        }
+
+        .arrow {
+            color: #d4af37;
+            font-size: 28px;
+        }
+
+        .info {
+            margin-top: 20px;
+            padding: 18px;
+            text-align: center;
+
+            border-radius: 20px;
+
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+
+        .info p {
+            color: #dfe7e5;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #82918e;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="index.html" class="back">← На главную</a>
+
+    <header>
+        <div class="icon">📿</div>
+
+        <h1>Азкары</h1>
+
+        <div class="subtitle">
+            Поминание Аллаха утром и вечером
+        </div>
+    </header>
+
+    <main class="cards">
+
+        <a href="morning.html" class="card">
+
+            <div class="card-icon">🌅</div>
+
+            <div class="text">
+
+                <div class="title">
+                    Утренние азкары
+                </div>
+
+                <div class="description">
+                    Азкары для начала дня
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a href="evening.html" class="card">
+
+            <div class="card-icon">🌙</div>
+
+            <div class="text">
+
+                <div class="title">
+                    Вечерние азкары
+                </div>
+
+                <div class="description">
+                    Азкары для завершения
